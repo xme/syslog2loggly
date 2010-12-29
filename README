@@ -1,0 +1,15 @@
+------------
+-- README --
+------------
+
+This Perl script forwards received Syslog event to a Loggly input using HTTPS.
+Loggly is a Cloud based log management solution. (http://www.loggly.com)
+
+Default configuration file: /etc/syslog2loggly.cong
+  apikey=xxxxx
+  port=xxxxx
+
+For more information, visit: 
+http://blog.rootshell.be/2010/12/27/send-events-safely-to-the-loggly-cloud
+
+Feel free to contribute to the script.
