@@ -19,6 +19,7 @@ use strict;
 use Getopt::Std;
 use HTTP::Request::Common qw(POST);
 use LWP::UserAgent;
+use Net::SSLGlue;
 use IO::Socket;
 use POSIX qw(setsid);
 
@@ -175,7 +176,6 @@ sub logsys
 		# Post the event to Loggly
 		my $ua = LWP::UserAgent->new(
 			agent => 'syslog2loggly.pl');
-		$ua->default_header("If-SSL-Cert-Subject"=>'\/CN=\*\.loggly\.com$');
 		my $url = "https://logs.loggly.com/inputs/$apikey";
 		my $req = POST $url, 
 			Content_Type => 'text/plain',
